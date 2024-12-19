@@ -1,0 +1,303 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Header Section */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    color: #0044cc;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #0044cc;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #0044cc 50%, #d3ec78 50%);
+    /* background: linear-gradient(to right, #0044cc 50%, #f4f4f4 50%); */
+    height: 50vh;
+    color: #fff;
+}
+
+.hero-content {
+    text-align: left;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #ffdd57;
+    color: #333;
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #ffa502;
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.bg-light {
+    background-color: #f0f5ff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #0044cc;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    box-shadow: 4px 4px 10px #d9d9d9, -4px -4px 10px #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    flex: 1 1 calc(33% - 30px);
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 8px 8px 15px #d9d9d9, -8px -8px 15px #72b5f5;
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #0044cc;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    animation: pulse 1s infinite, rotate 15s linear infinite;
+}
+/* Pulse effect */
+.card-icon:hover {
+    animation: pulse 1s infinite;  /* Apply the pulse animation on hover */
+    color: #007BFF;  /* Change color when hovered */
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card p, .card ul {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Contact Section with Map */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.map-container {
+    flex: 1;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-content {
+    animation: slideInLeft 1s ease-out;
+}
+
+/* Scroll to Top Button Styling */
+.scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Rotate animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Increase size to 120% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Rotation effect */
+.card-icon.rotate {
+    animation: rotate 2s linear infinite; /* Continuous rotation */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.logo {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Align image and text together */
+    width: 100%; /* Ensure it spans the container width */
+    position: relative;
+}
+
+/* Logo image on the left */
+.logo-img {
+    max-width: 150px; /* Adjust the size of the image */
+    height: auto;
+    margin-right: 5px; /* Space between image and text */
+}
+
+/* Center text within the remaining space */
+.company-tagline {
+    flex: 1; /* Allow text to take up remaining space */
+    text-align: center; /* Center-align the text horizontally */
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: bold;
+    color: #333; /* Adjust color as needed */
+    margin: 0; /* Remove default margin */
+}
+
+/* Adding a text shadow for more emphasis */
+.company-tagline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #007bff, #00bfff); /* Gradient effect */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: -1; /* Ensure the shadow is behind the text */
+}
+
+/* Adding a subtle text shadow to give depth */
+.company-tagline {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
